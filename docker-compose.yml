@@ -1,0 +1,52 @@
+version: '3.3'
+services:
+  flowerpower:
+    ports:
+        - '9081:9080'
+    restart: always
+    image: flowerpower:latest
+    build: ./FlowerPower
+    depends_on:
+      - "mqtt_server"
+
+  smartkettle:
+    ports:
+        - '9082:9080'
+    restart: always
+    image: smartkettle:latest
+    build: ./SmartKettle
+    depends_on:
+      - "mqtt_server"
+
+  smarttv-alpha-x:
+    ports:
+        - '9083:9080'
+    restart: always
+    image: smarttv-alpha-x:latest
+    build: ./SmartTV-Alpha-X
+    depends_on:
+      - "mqtt_server"
+
+  windwow:
+    ports:
+        - '9084:9080'
+    restart: always
+    image: windwow:latest
+    build: ./WindWow
+    depends_on:
+      - "mqtt_server"
+  
+  mqtt_server:
+    image: eclipse-mosquitto
+    ports:
+      - 9883:1883
+      - 10001:9001
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - mosquitto_data:/mosquitto/data
+      - mosquitto_logs:/mosquitto/log 
+
+volumes:
+  mosquitto_data:
+  mosquitto_logs:
+      
