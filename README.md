@@ -1,6 +1,8 @@
 IoT-Dataset Docker network
 ===
 
+![iot_dataset_docker](https://user-images.githubusercontent.com/10727813/123518139-3746b880-d6ad-11eb-9996-cbfb4de186e4.png)
+
 1. Run `./pull_projects.sh` to get or update the applications
 2. Run `docker-compose up --build` to start the network
 
