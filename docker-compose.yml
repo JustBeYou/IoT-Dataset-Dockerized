@@ -27,14 +27,14 @@ services:
     depends_on:
       - "mqtt_server"
 
-  #windwow:
-    #ports:
-        #- '9084:9080'
-    #restart: always
-    #image: windwow:latest
-    #build: ./WindWow
-    #depends_on:
-      #- "mqtt_server"
+  windwow:
+    ports:
+        - '9084:9080'
+    restart: always
+    image: windwow:latest
+    build: ./WindWow
+    depends_on:
+        - "mqtt_server"
   
   mqtt_server:
     image: eclipse-mosquitto
