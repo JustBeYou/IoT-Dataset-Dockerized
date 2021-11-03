@@ -4,8 +4,7 @@ services:
     ports:
         - '9081:9080'
     restart: always
-    image: flowerpower:latest
-    build: ./FlowerPower
+    image: thelittlewho/flowerpower:latest
     depends_on:
       - "mqtt_server"
 
@@ -13,17 +12,15 @@ services:
     ports:
         - '9082:9080'
     restart: always
-    image: smartkettle:latest
-    build: ./SmartKettle
+    image: thelittlewho/smartkettle:latest
     depends_on:
       - "mqtt_server"
 
-  smarttv-alpha-x:
+  smarttv:
     ports:
         - '9083:9080'
     restart: always
-    image: smarttv-alpha-x:latest
-    build: ./SmartTV-Alpha-X
+    image: thelittlewho/smarttv-alpha-x:latest
     depends_on:
       - "mqtt_server"
 
@@ -31,11 +28,17 @@ services:
     ports:
         - '9084:9080'
     restart: always
-    image: windwow:latest
-    build: ./WindWow
+    image: thelittlewho/windwow:latest
     depends_on:
         - "mqtt_server"
-  
+  smarteeth:
+    ports:
+        - '9085:9080'
+    restart: always
+    image: thelittlewho/smarteeth:latest
+    depends_on:
+        - "mqtt_server"
+
   mqtt_server:
     image: eclipse-mosquitto
     ports:
@@ -45,6 +48,16 @@ services:
       - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
       - mosquitto_data:/mosquitto/data
       - mosquitto_logs:/mosquitto/log 
+
+  hub_app:
+    image: thelittlewho/hub_app:latest
+    restart: always
+    depends_on:
+      - "flowerpower"
+      - "smarteeth"
+      - "windwow"
+      - "smarttv"
+      - "smartkettle"
 
 volumes:
   mosquitto_data:
