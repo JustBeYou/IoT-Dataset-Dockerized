@@ -7,3 +7,4 @@ curl -I -X GET http://localhost:9081/
 curl -I -X GET http://localhost:9082/
 curl -I -X GET http://localhost:9083/
 curl -I -X GET http://localhost:9084/
+curl -I -X GET http://localhost:9085/
