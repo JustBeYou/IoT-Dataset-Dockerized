@@ -20,7 +20,7 @@ services:
     ports:
         - '9083:9080'
     restart: always
-    image: thelittlewho/smarttv-alpha-x:latest
+    image: thelittlewho/smarttv:latest
     depends_on:
       - "mqtt_server"
 
@@ -51,7 +51,6 @@ services:
 
   hub_app:
     image: thelittlewho/hub_app:latest
-    restart: always
     depends_on:
       - "flowerpower"
       - "smarteeth"
