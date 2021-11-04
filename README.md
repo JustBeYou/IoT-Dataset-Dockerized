@@ -6,7 +6,7 @@ This is the main repository of our dataset of IoT applications. It contains 5 mo
 
 Run `docker-compose up -d` to start the network. Docker will pull the images for each application to your local machine.
 
-If you want to interact with the applications, you can change the code of the (hub app)[https://github.com/unibuc-cs/iot-dataset-hub-app], rebuild the image and restart the composer. If you want live updates, mount the directory of the hub app as a volume inside the docker container. (TODO add instructions for this)
+If you want to interact with the applications, you can change the code of the [hub app](https://github.com/unibuc-cs/iot-dataset-hub-app), rebuild the image and restart the composer. If you want live updates, mount the directory of the hub app as a volume inside the docker container. (TODO add instructions for this)
 
 ## IoT applications
 * https://github.com/unibuc-cs/iot-dataset-hub-app (the hub)
