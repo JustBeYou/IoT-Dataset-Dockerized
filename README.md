@@ -1,5 +1,11 @@
 IoT-Dataset Docker network
 ===
+
+## ARCHIVED
+
+This repository has been archived. The codebase created here, has been used, in the following project:
+https://github.com/unibuc-cs/iot-dataset-hub-app
+
 This is the main repository of our dataset of IoT applications. It contains 5 mock smart home apps and a hub. 
 
 ![image](https://user-images.githubusercontent.com/10727813/140134084-657e0e02-774b-4fbe-8cf5-a9d9e5e856aa.png)
